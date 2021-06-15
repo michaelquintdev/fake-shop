@@ -6,11 +6,15 @@ import Home from './components/Home'
 import Item from './components/Item'
 
 function App() {
-
+  const [data, setData] = useState([])
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(res => {
         console.log(res.data)
+        setData(res.data)
+      })
+      .catch(error => {
+        console.log(error);
       })
     }, [])
 
@@ -29,7 +33,7 @@ function App() {
           <Item />
         </Route>
         <Route path = '/shop'>
-          <Shop />
+          <Shop data = {data}/>
         </Route>
         <Route path = '/'>
           <Home />
