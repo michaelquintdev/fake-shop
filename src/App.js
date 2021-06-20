@@ -30,14 +30,12 @@ function App() {
       </nav>
       <Switch>
         <Route path = '/shop/:itemID'>
-          <Item />
+          <Item data = {data}/>
         </Route>
         <Route path = '/shop'>
           <Shop data = {data}/>
         </Route>
-        <Route path = '/'>
-          <Home />
-        </Route>
+        <Route exact path = '/' component = {Home}/>
       </Switch>
     </div>
   );

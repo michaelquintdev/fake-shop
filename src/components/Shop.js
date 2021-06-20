@@ -5,7 +5,7 @@ function Shop(props) {
     const {data} = props
     return (
         <div>
-            {data.map(item => {
+            {data.map((item) => {
                 return <Card item = {item} key = {item.id}/>
             })}
         </div>

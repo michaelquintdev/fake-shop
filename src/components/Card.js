@@ -1,5 +1,4 @@
 import React from 'react'
-import Item from './Item'
 import { useRouteMatch, Link } from 'react-router-dom'
 
 function Card(props) {
@@ -7,13 +6,13 @@ function Card(props) {
     const {url} = useRouteMatch()
     return (
         <div>
-            <div>
-                <Link to = {`${url}`/`${item.id}`}>
-                    <img src = {item.image} />
+            <Link to = {`${url} / ${item.id}`}>
+                <div>
+                    <img src = {item.image} alt = {`This is a ${item.title}`}/>
                     <h3>{item.title}</h3>
                     <p>${item.price}</p>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     )
 }
