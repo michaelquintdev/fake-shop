@@ -6,7 +6,7 @@ function Card(props) {
     const {url} = useRouteMatch()
     return (
         <div>
-            <Link to = {`${url} / ${item.id}`}>
+            <Link to = {`${url}/${item.id}`}>
                 <div>
                     <img src = {item.image} alt = {`This is a ${item.title}`}/>
                     <h3>{item.title}</h3>

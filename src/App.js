@@ -32,7 +32,7 @@ function App() {
         <Route path = '/shop/:itemID'>
           <Item data = {data}/>
         </Route>
-        <Route path = '/shop'>
+        <Route exact path = '/shop'>
           <Shop data = {data}/>
         </Route>
         <Route exact path = '/' component = {Home}/>
