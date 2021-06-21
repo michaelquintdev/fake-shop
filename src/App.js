@@ -7,6 +7,8 @@ import Item from './components/Item'
 
 function App() {
   const [data, setData] = useState([])
+  const [cart, setCart] = useState(0)
+
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(res => {
@@ -25,12 +27,13 @@ function App() {
         <div className = 'nav-links'>
           <Link to = '/'>Home</Link>
           <Link to = '/shop'>Shop</Link>
+          <Link to = '/cart'>Cart {cart}</Link>
         </div>
         {/* <button Link = '/bro'></button> */}
       </nav>
       <Switch>
         <Route path = '/shop/:itemID'>
-          <Item data = {data}/>
+          <Item data = {data} setCart = {setCart} cart = {cart}/>
         </Route>
         <Route exact path = '/shop'>
           <Shop data = {data}/>
