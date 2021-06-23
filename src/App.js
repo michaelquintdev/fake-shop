@@ -4,6 +4,7 @@ import {Route, Link, Switch} from 'react-router-dom'
 import Shop from './components/Shop'
 import Home from './components/Home'
 import Item from './components/Item'
+import Cart from './components/Cart'
 
 function App() {
   const [data, setData] = useState([])
@@ -23,7 +24,7 @@ function App() {
     // Functions
     const addToCart = (product) =>{
       setCart([...cart, product])
-      console.log('IT WORKS');
+      console.log(cart);
     }
 
   return (
@@ -43,7 +44,10 @@ function App() {
         <Route path = '/shop/:itemID'>
           <Item data = {data} addToCart = {addToCart}/>
         </Route>
-        <Route exact path = '/shop'>
+        <Route path = '/cart'>
+          <Cart cart = {cart}/>
+        </Route>
+        <Route path = '/shop'>
           <Shop data = {data}/>
         </Route>
         <Route exact path = '/' component = {Home}/>

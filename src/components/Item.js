@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import { useParams } from 'react-router-dom'
 
 function Item(props) {
@@ -7,8 +6,6 @@ function Item(props) {
 
     const item = data.find(async (item) => item.id === itemID)
     if(!data.length){return(<h1>Fetching items...</h1>)}
-
-    console.log(item)
 
     return (
         <div>
