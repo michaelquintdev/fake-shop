@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useParams } from 'react-router-dom'
 
 function Item(props) {
-    const { data, cart, setCart } = props
+    const { data, addToCart } = props
     const { itemID } = useParams()
 
     const item = data.find(async (item) => item.id === itemID)
@@ -16,12 +16,7 @@ function Item(props) {
             <img src = {item.image} alt = {item.title}/>
             <p>{item.description}</p>
             <h4>{item.price}</h4>
-            <form>
-                <label>
-                    <input type = 'text' name='amountPurchased' maxLength='2' onChange={null} value={1}/>
-                </label>
-                <button onSubmit = {null}>Add to Cart</button>
-            </form>
+            <button onClick = {() => addToCart(item)}>Add to Cart</button>
         </div>
     )
 }
