@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
       .then(res => {
-        console.log(res.data)
         setData(res.data)
       })
       .catch(error => {
@@ -24,7 +23,6 @@ function App() {
     // Functions
     const addToCart = (product) =>{
       setCart([...cart, product])
-      console.log(cart);
     }
 
   return (
@@ -36,7 +34,6 @@ function App() {
           <Link to = '/shop'>Shop</Link>
           <Link to = '/cart'>Cart ({cart.length})</Link>
 
-
         </div>
         {/* <button Link = '/bro'></button> */}
       </nav>
@@ -44,10 +41,10 @@ function App() {
         <Route path = '/shop/:itemID'>
           <Item data = {data} addToCart = {addToCart}/>
         </Route>
-        <Route path = '/cart'>
+        <Route exact path = '/cart'>
           <Cart cart = {cart}/>
         </Route>
-        <Route path = '/shop'>
+        <Route exact path = '/shop'>
           <Shop data = {data}/>
         </Route>
         <Route exact path = '/' component = {Home}/>

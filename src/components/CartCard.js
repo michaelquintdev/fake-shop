@@ -4,9 +4,9 @@ function CartCard(props) {
     const { item } = props;
     return (
         <div>
-            <h2>{item.title}</h2>
+            <h3>{item.title}</h3>
             <img src = {item.image} alt = {item.title} />
-            <h3>{item.price}</h3>
+            <h4>{item.price}</h4>
         </div>
     )
 }

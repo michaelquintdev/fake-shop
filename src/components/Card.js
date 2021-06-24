@@ -4,6 +4,10 @@ import { useRouteMatch, Link } from 'react-router-dom'
 function Card(props) {
     const {item} = props
     const {url} = useRouteMatch()
+    
+    //Function to find specific item ID
+    // const findItem = (items) => {
+    //     items.find()
     return (
         <div>
             <Link to = {`${url}/${item.id}`}>
