@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
+// maps through our data, making a card for each array index
 function Shop(props) {
     const {data} = props
     return (

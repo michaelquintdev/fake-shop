@@ -7,11 +7,20 @@ import Home from './components/Home'
 import Item from './components/Item'
 import Cart from './components/Cart'
 
+const initialFormValues = {
+    firstName: '',
+    lastName: '',
+    address: '',
+    zipCode: 0,
+    card: 0,
+    code: 0,
+}
 
 function App() {
-  // State, should managed inside of Redux eventually.
+  // State, should be managed inside of Redux eventually.
   const [data, setData] = useState([])
   const [cart, setCart] = useState([])
+  const [formValues, setFormValues] = useState(initialFormValues)
 
   // Calling API (in the real world would be a backend endpoint) to set data
   useEffect(() => {
@@ -28,6 +37,13 @@ function App() {
     const addToCart = (product) =>{
       setCart([...cart, product])
     }
+
+    const updateForm = (inputName, inputValue) => {
+      setFormValues({...formValues, [inputName]: inputValue})
+    }
+
+    // Posting card information and adding a new 'buy ticket' to a mock backend.
+    const submit = () => {}
 
   return (
     <div className="App">
@@ -49,7 +65,7 @@ function App() {
           <Item data = {data} addToCart = {addToCart}/>
         </Route>
         <Route exact path = '/cart'>
-          <Cart cart = {cart}/>
+          <Cart cart = {cart} submit = {submit} update = {updateForm}/>
         </Route>
         <Route exact path = '/shop'>
           <Shop data = {data}/>

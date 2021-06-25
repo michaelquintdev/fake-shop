@@ -1,8 +1,10 @@
 import { useParams } from 'react-router-dom'
 
 // Constructing the final product display as well as implementing cart functionality using addToCart
+
 function Item(props) {
     const { data, addToCart } = props
+
     // Grabs the parameter from the Route in the App component
     const { itemID } = useParams()
 
