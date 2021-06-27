@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 // Constructing the final product display as well as implementing cart functionality using addToCart
 
 function Item(props) {
-    const { data, addToCart } = props
+    const { data, addToCart, } = props
 
     // Grabs the parameter from the Route in the App component
     const { itemID } = useParams()
@@ -19,7 +19,7 @@ function Item(props) {
              <img src = {item.image} alt = {item.title}/>
              <p>{item.description}</p>
              <h4>{item.price}</h4>
-             <button onClick = {() => addToCart(item)}>Add to Cart</button>
+             <button onClick = {() => addToCart(item)} >Add to Cart</button>
          </div>
     )
 }

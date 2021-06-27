@@ -20,6 +20,7 @@ function App() {
   // State, should be managed inside of Redux eventually.
   const [data, setData] = useState([])
   const [cart, setCart] = useState([])
+  const [price, setPrice] = useState(0)
   const [formValues, setFormValues] = useState(initialFormValues)
 
   // Calling API (in the real world would be a backend endpoint) to set data
@@ -31,7 +32,14 @@ function App() {
       .catch(error => {
         console.log(error);
       })
-    }, [])
+  }, [])
+  useEffect(() => {
+    const newPrice = cart.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue.price;
+    }, 0)
+    setPrice(newPrice)
+  }, [cart])
+    
 
     // Functions
     const addToCart = (product) =>{
@@ -42,7 +50,7 @@ function App() {
       setFormValues({...formValues, [inputName]: inputValue})
     }
 
-    // Posting card information and adding a new 'buy ticket' to a mock backend.
+    // Posting credit card information by adding a new 'buy ticket' to a mock backend.
     const submit = () => {}
 
   return (
@@ -65,7 +73,7 @@ function App() {
           <Item data = {data} addToCart = {addToCart}/>
         </Route>
         <Route exact path = '/cart'>
-          <Cart cart = {cart} submit = {submit} update = {updateForm}/>
+          <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price}/>
         </Route>
         <Route exact path = '/shop'>
           <Shop data = {data}/>

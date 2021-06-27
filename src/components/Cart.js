@@ -2,7 +2,7 @@ import React from 'react'
 import CartCard from './CartCard'
 
 function Cart(props) {
-    const { cart, submit, update} = props;
+    const { cart, submit, update, price} = props;
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -21,6 +21,7 @@ function Cart(props) {
                     return <CartCard item = {item} key = {idx}/>
                 })}
             </div>
+            <h2>{price}</h2>
             <div>
                 <h2>Buy Here</h2>
                 <form onSubmit={onSubmit}>
