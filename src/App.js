@@ -33,6 +33,8 @@ function App() {
         console.log(error);
       })
   }, [])
+
+  // Calculating total price based on when the cart changes values
   useEffect(() => {
     const newPrice = cart.reduce(function(accumulator, currentValue) {
       return accumulator + currentValue.price;
@@ -80,6 +82,10 @@ function App() {
         </Route>
         <Route exact path = '/' component = {Home}/>
       </Switch>
+      <footer>
+        <h2>Little About the Project</h2>
+        <p>Fake Shop has been a front-end project I've been working on intermittently for the past couple months. The main stack used in this is React and Redux, although initially it was created without Redux using prop driling. If you'd like to see more of the technical side of this project the Github Repo is below, within that is a Read Me with a map of all the components and how they interweave as well. Hopefully this showcases a good amount of what I can do! Cheers.</p>
+      </footer>
     </div>
   );
 }

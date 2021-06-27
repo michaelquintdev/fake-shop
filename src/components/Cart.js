@@ -21,7 +21,7 @@ function Cart(props) {
                     return <CartCard item = {item} key = {idx}/>
                 })}
             </div>
-            <h2>{price}</h2>
+            <h2>${price}</h2>
             <div>
                 <h2>Buy Here</h2>
                 <form onSubmit={onSubmit}>
