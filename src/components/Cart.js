@@ -15,8 +15,8 @@ function Cart(props) {
 
     return (
         <div>
-            <h1>Final Shopping Cart</h1>
-            <div>
+            <h2>Final Shopping Cart</h2>
+            <div className = 'cards-container'>
                 {cart.map((item, idx) => {
                     return <CartCard item = {item} key = {idx}/>
                 })}

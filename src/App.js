@@ -48,6 +48,7 @@ function App() {
       setCart([...cart, product])
     }
 
+    // updating the cart form 
     const updateForm = (inputName, inputValue) => {
       setFormValues({...formValues, [inputName]: inputValue})
     }
@@ -60,28 +61,32 @@ function App() {
 
       {/* Navbar */}
       <nav>
-        <h1>Fake Store</h1>
-        <div className = 'nav-links'>
-          <Link to = '/'>Home</Link>
-          <Link to = '/shop'>Shop</Link>
-          <Link to = '/cart'>Cart ({cart.length})</Link>
-        </div>
+          <div id = 'logo'>
+            <Link to = '/' className = 'link'>Fake Store</Link>
+          </div>
+          <div className = 'nav-links'>
+            <Link to = '/' className = 'link item'>Home</Link>
+            <Link to = '/shop' className = 'link item'>Shop</Link>
+            <Link to = '/cart' className = 'link item'>Cart({cart.length})</Link>
+          </div>
       </nav>
 
       {/* Switches */}
-      <Switch>
-        {/* Parameter in Item.js listed below */}
-        <Route path = '/shop/:itemID'>
-          <Item data = {data} addToCart = {addToCart}/>
-        </Route>
-        <Route exact path = '/cart'>
-          <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price}/>
-        </Route>
-        <Route exact path = '/shop'>
-          <Shop data = {data}/>
-        </Route>
-        <Route exact path = '/' component = {Home}/>
-      </Switch>
+      <div className = 'main-body'>
+        <Switch>
+          {/* Parameter in Item.js listed below */}
+          <Route path = '/shop/:itemID'>
+            <Item data = {data} addToCart = {addToCart}/>
+          </Route>
+          <Route exact path = '/cart'>
+            <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price}/>
+          </Route>
+          <Route exact path = '/shop'>
+            <Shop data = {data}/>
+          </Route>
+          <Route exact path = '/' component = {Home}/>
+        </Switch>
+      </div>
       <footer>
         <h2>Little About the Project</h2>
         <p>Fake Shop has been a front-end project I've been working on intermittently for the past couple months. The main stack used in this is React and Redux, although initially it was created without Redux using prop driling. If you'd like to see more of the technical side of this project the Github Repo is below, within that is a Read Me with a map of all the components and how they interweave as well. Hopefully this showcases a good amount of what I can do! Cheers.</p>
