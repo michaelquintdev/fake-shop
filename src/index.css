@@ -113,16 +113,17 @@ nav{
     padding: 2%;
 }
 
-/* Cards */
-.cards-container{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 100%;
-    border: solid 2px black;
-}
+/* cards */
 .card{
-    width: 20%;
-    border: solid 2px black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: dotted black 1px;
+}
+.cards-container{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    
 }

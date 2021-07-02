@@ -47,6 +47,10 @@ function App() {
     const addToCart = (product) =>{
       setCart([...cart, product])
     }
+    const removeFromCart = (product) =>{
+      const newCart = cart.filter(product)
+      setCart(newCart)
+    }
 
     // updating the cart form 
     const updateForm = (inputName, inputValue) => {
@@ -67,7 +71,7 @@ function App() {
           <div className = 'nav-links'>
             <Link to = '/' className = 'link item'>Home</Link>
             <Link to = '/shop' className = 'link item'>Shop</Link>
-            <Link to = '/cart' className = 'link item'>Cart({cart.length})</Link>
+            <Link to = '/cart' className = 'link item '>Cart({cart.length})</Link>
           </div>
       </nav>
 
@@ -79,7 +83,7 @@ function App() {
             <Item data = {data} addToCart = {addToCart}/>
           </Route>
           <Route exact path = '/cart'>
-            <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price}/>
+            <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price} removeFromCart = {removeFromCart}/>
           </Route>
           <Route exact path = '/shop'>
             <Shop data = {data}/>

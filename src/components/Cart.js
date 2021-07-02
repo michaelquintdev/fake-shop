@@ -2,7 +2,7 @@ import React from 'react'
 import CartCard from './CartCard'
 
 function Cart(props) {
-    const { cart, submit, update, price} = props;
+    const { cart, submit, update, price, removeFromCart} = props;
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -18,7 +18,7 @@ function Cart(props) {
             <h2>Final Shopping Cart</h2>
             <div className = 'cards-container'>
                 {cart.map((item, idx) => {
-                    return <CartCard item = {item} key = {idx}/>
+                    return <CartCard item = {item} key = {idx} removeFromCart = {removeFromCart}/>
                 })}
             </div>
             <h2>${price}</h2>
