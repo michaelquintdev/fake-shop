@@ -45,11 +45,11 @@ function App() {
 
     // Functions
     const addToCart = (product) =>{
-      setCart([...cart, product])
+      setCart([...cart, { ...product }])
     }
-    const removeFromCart = (product) =>{
-      const newCart = cart.filter(product)
-      setCart(newCart)
+
+    const removeFromCart = (itemToRemove) => {
+      setCart(cart.filter((product) => product !== itemToRemove));
     }
 
     // updating the cart form 
