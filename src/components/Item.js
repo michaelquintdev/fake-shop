@@ -18,7 +18,7 @@ function Item(props) {
              <h3>{item.title}</h3>
              <img src = {item.image} alt = {item.title}/>
              <p>{item.description}</p>
-             <h4>{item.price}</h4>
+             <h4>${item.price.toFixed(2)}</h4>
              <button onClick = {() => addToCart(item)} >Add to Cart</button>
          </div>
     )

@@ -39,7 +39,7 @@ function App() {
     const newPrice = cart.reduce(function(accumulator, currentValue) {
       return accumulator + currentValue.price;
     }, 0)
-    setPrice(newPrice)
+    setPrice(newPrice.toFixed(2))
   }, [cart])
     
 

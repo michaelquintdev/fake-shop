@@ -30,7 +30,7 @@ function CartCard(props) {
             <button onClick = {() => removeFromCart(item)}> X </button>
             <Title className = 'cart-title'>{item.title}</Title>
             <Image className = 'cart-img' src = {item.image} alt = {item.title} />
-            <Price>${item.price}</Price>
+            <Price>${item.price.toFixed(2)}</Price>
         </Div>
     )
 }

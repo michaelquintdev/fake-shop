@@ -15,7 +15,7 @@ function Card(props) {
                 <div>
                     <img src = {item.image} alt = {`This is a ${item.title}`}/>
                     <h3>{item.title}</h3>
-                    <p>${item.price}</p>
+                    <p>${item.price.toFixed(2)}</p>
                 </div>
             </Link>
         </div>
