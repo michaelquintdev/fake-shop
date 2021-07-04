@@ -66,12 +66,13 @@ function App() {
       {/* Navbar */}
       <nav>
           <div id = 'logo'>
-            <Link to = '/' className = 'link'>Fake Store</Link>
+            <Link to = '/' className = 'title'>MAQ</Link>
           </div>
           <div className = 'nav-links'>
             <Link to = '/' className = 'link item'>Home</Link>
             <Link to = '/shop' className = 'link item'>Shop</Link>
             <Link to = '/cart' className = 'link item '>Cart({cart.length})</Link>
+            <Link to = '/login' className = 'link item'>Login</Link>
           </div>
       </nav>
 
