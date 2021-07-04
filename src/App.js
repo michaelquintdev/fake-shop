@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import {Route, Link, Switch} from 'react-router-dom'
 import axios from 'axios'
+import Login from './components/Login'
 import Shop from './components/Shop'
 import Home from './components/Home'
 import Item from './components/Item'
@@ -82,6 +83,9 @@ function App() {
           {/* Parameter in Item.js listed below */}
           <Route path = '/shop/:itemID'>
             <Item data = {data} addToCart = {addToCart}/>
+          </Route>
+          <Route path = '/login'>
+            <Login />
           </Route>
           <Route exact path = '/cart'>
             <Cart cart = {cart} submit = {submit} update = {updateForm} price = {price} removeFromCart = {removeFromCart}/>

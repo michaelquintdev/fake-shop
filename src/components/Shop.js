@@ -5,7 +5,7 @@ import Card from './Card'
 function Shop(props) {
     const {data} = props
     return (
-        <div>
+        <div className = 'cards-container'>
             {data.map((item) => {
                 return <Card item = {item} key = {item.id}/>
             })}
