@@ -65,17 +65,17 @@ function App() {
     <div className="App">
 
       {/* Navbar */}
-      <nav>
-          <div id = 'logo'>
+      <div className = 'nav-container'>
+          <div className = 'logo'>
             <Link to = '/' className = 'title'>MAQ</Link>
           </div>
-          <div className = 'nav-links'>
-            <Link to = '/' className = 'link item'>Home</Link>
-            <Link to = '/shop' className = 'link item'>Shop</Link>
-            <Link to = '/cart' className = 'link item '>Cart({cart.length})</Link>
-            <Link to = '/login' className = 'link item'>Login</Link>
+          <div className = 'bar'>
+            <Link to = '/' className = 'link'>Home</Link>
+            <Link to = '/shop' className = 'link'>Shop</Link>
+            <Link to = '/cart' className = 'link'>Cart({cart.length})</Link>
+            <Link to = '/login' className = 'link'>Login</Link>
           </div>
-      </nav>
+      </div>
 
       {/* Switches */}
       <div className = 'main-body'>
@@ -96,10 +96,6 @@ function App() {
           <Route exact path = '/' component = {Home}/>
         </Switch>
       </div>
-      <footer>
-        <h2>Little About the Project</h2>
-        <p>Fake Shop has been a front-end project I've been working on intermittently for the past couple months. The main stack used in this is React and Redux, although initially it was created without Redux using prop driling. If you'd like to see more of the technical side of this project the Github Repo is below, within that is a Read Me with a map of all the components and how they interweave as well. Hopefully this showcases a good amount of what I can do! Cheers.</p>
-      </footer>
     </div>
   );
 }
